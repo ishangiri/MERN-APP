@@ -5,7 +5,12 @@ import {
   Register,
   Login,
   DashBoardLayout,
-  Error
+  Error,
+  AddJob,
+  Stats,
+  AllJobs,
+  Profile,
+  Admin
 
 } from './pages'
 
@@ -29,7 +34,30 @@ const router =  createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <DashBoardLayout />
+        element: <DashBoardLayout />,
+        children:[
+          {
+            index: true,
+            element: <AddJob />
+          }, 
+          {
+            path: 'stats',
+            element: <Stats />
+          },
+          {
+            path: 'all-jobs',
+            element: <AllJobs/>
+          },
+          {
+            path: 'profile',
+            element: <Profile/>
+          },
+          {
+            path: 'admin',
+            element: <Admin/>
+          },
+
+        ]
       },
     ]
   }, 
